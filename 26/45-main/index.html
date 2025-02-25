@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Board (Placeholder)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>My Board</h1>
+  <p>Use this page only for the very first post if needed. After that, post.php will overwrite it.</p>
+  <form action="post.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="action" value="newpost">
+    <p>
+      Name: <input type="text" name="name" required><br>
+      Subject: <input type="text" name="subject"><br>
+      Body: <br><textarea name="body" rows="3" cols="40" required></textarea><br>
+      File: <input type="file" name="file" accept=".jpg,.jpeg,.png,.gif,.webp,.mp4"><br>
+      <button type="submit">Submit Post</button>
+    </p>
+  </form>
+</body>
+</html>
