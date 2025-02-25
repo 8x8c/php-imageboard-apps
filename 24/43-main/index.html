@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TinyIB Example</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    /* -- Minimal Futaba-like CSS for the initial page -- */
+    body {
+      padding: 8px;
+      margin: 0 auto;
+      background: #FFFFEE;
+      color: #800000;
+      font-family: sans-serif;
+      max-width: 800px;
+    }
+    hr {
+      clear: both;
+      border: 0 none;
+      height: 1px;
+      color: #800000;
+      background-color: #800000;
+      background-image: linear-gradient(
+        to right,
+        rgba(255,255,238,1),
+        rgba(128,0,0,0.75),
+        rgba(255,255,238,1)
+      );
+    }
+    .adminbar {
+      text-align: right;
+      clear: both;
+      float: right;
+    }
+    .logo {
+      clear: both;
+      text-align: center;
+      font-size: 2em;
+      color: #800000;
+      width: 100%;
+    }
+    .postarea {
+      text-align: center;
+    }
+    .postarea table {
+      margin: 0 auto;
+      text-align: left;
+    }
+    .postblock {
+      background: #EEAA88;
+      color: #800000;
+      font-weight: 800;
+      vertical-align: top;
+      padding: 3px;
+    }
+    .rules {
+      padding-left: 5px;
+      width: 468px;
+      font-size: 10px;
+      font-family: sans-serif;
+    }
+    .rules ul {
+      margin: 0;
+      padding-left: 0;
+    }
+    .footer {
+      clear: both;
+      text-align: center;
+      font-size: 12px;
+      font-family: serif;
+      margin-top: 1em;
+    }
+    input[type="submit"] {
+      margin-left: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="adminbar">
+    [<a href="#" style="text-decoration: underline;">Manage</a>]
+    <select id="switchStylesheet">
+      <option value="">Style</option>
+      <option value="futaba" selected>Futaba</option>
+      <option value="burichan">Burichan</option>
+    </select>
+  </div>
+
+  <div class="logo">TinyIB Example</div>
+  <hr width="90%">
+
+  <div class="postarea">
+    <form name="postform" id="postform" action="post.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="parent" value="0">
+      <table>
+        <tr>
+          <td class="postblock">Name</td>
+          <td><input type="text" name="name" size="28" maxlength="75"></td>
+        </tr>
+        <tr>
+          <td class="postblock">Subject</td>
+          <td>
+            <input type="text" name="subject" size="40" maxlength="75">
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+        <tr>
+          <td class="postblock">Message</td>
+          <td>
+            <textarea id="message" name="message" cols="48" rows="4" maxlength="8000"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="postblock">File</td>
+          <td><input type="file" name="file" size="35"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="rules">
+            <ul>
+              <li>Supported file types are JPG, PNG, GIF, WEBP, and MP4.</li>
+              <li>Images larger than 250x250 will be thumbnailed.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <hr>
+
+  <!--
+    Once you submit, post.php will overwrite this file (index.html) 
+    with a dynamically generated board containing all posts.
+  -->
+
+  <div class="footer">
+    - <a href="https://4chess.com" target="_blank">com</a> +
+      <a href="https://4chess.net" target="_blank">net</a> +
+      <a href="https://4chess.com" target="_blank">org</a> -
+  </div>
+</body>
+</html>
