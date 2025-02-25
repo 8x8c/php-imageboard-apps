@@ -1,0 +1,300 @@
+/* Updated style.css for PHP 8.4.1 with improved form styling and inline video */
+
+/* General layout and text styles */
+body {
+    color: #EEE;
+    font-weight: 100;
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    background: #222;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+html {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEUcHBweHh5WWmVNAAAAJUlEQVR4AWMAAkYQgNOMaCJAAlUEiFFFgAhVBM1EICAoMljcAQBWEAChK8hEDAAAAABJRU5ErkJggg==);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Logo Styling */
+.logo {
+    clear: both;
+    color: #CCC;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+}
+
+/* Box styling for posts */
+.reply {
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    position: relative;
+    color: #EEE;
+}
+
+/* Improved contrast for highlighted replies */
+.replyhl {
+    background: #444;
+    border: 1px solid #777;
+    color: #FFF;
+}
+
+/* Style for reply link in post */
+.replylink {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+/* Style for file information in posts */
+.reply .fileinfo {
+    margin-bottom: 10px;
+    color: #BBB;
+}
+
+/* Adjust image and video styles within replies */
+.reply img,
+.reply video {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Thumbnail styling for consistency between videos and images */
+.thumb {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for headings */
+h3 {
+    margin-top: 20px;
+    color: #CCC;
+}
+
+/* Style for the post form */
+form.post-form {
+    background: #2A2A2A;
+    padding: 15px;
+    border: 1px solid #444;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+}
+form textarea {
+    width: calc(100% - 20px); /* Adjust width to fit padding */
+    margin-bottom: 10px;
+    background: #333;
+    color: #FFF;
+    border: 1px solid #555;
+    padding: 5px;
+}
+form label {
+    color: #BBB;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.form-submit-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.post-button {
+    padding: 8px 15px;
+    background: #555;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.post-button:hover {
+    background: #666;
+}
+
+/* Pagination styles */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination a {
+    color: #BBB;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+.pagination a:hover {
+    background: #555;
+    color: #FFF;
+}
+.pagination strong {
+    color: #FFF;
+    padding: 5px;
+}
+
+/* Accessibility improvements */
+input[type="text"], textarea, select {
+    background: #333;
+    border: 1px solid #777;
+    color: #FFF;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+input[type=checkbox] {
+    vertical-align: middle;
+}
+
+/* Focus indicators for accessibility */
+input[type="text"], textarea, select, form input[type="submit"] {
+    outline: none;
+}
+input[type="text"]:focus, textarea:focus, select:focus, form input[type="submit"]:focus {
+    border: 1px solid #00BFFF;
+    box-shadow: 0 0 5px #00BFFF;
+}
+
+/* Reply numbering */
+.replynumber {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #FFA500;
+}
+
+/* Adjust reply mode styles */
+.replymode {
+    background: #E04000;
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.replymode h2 {
+    margin: 0;
+}
+.replymode a {
+    display: inline-block;
+    margin-top: 5px;
+    color: #FFF;
+    text-decoration: none;
+}
+.replymode a:hover {
+    text-decoration: underline;
+}
+
+/* Return to Thread link - ensure it navigates correctly */
+.replymode a.return {
+    display: inline-block;
+    margin-top: 10px;
+    color: #FFD700;
+}
+.replymode a.return:hover {
+    color: #FFF;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+    .reply, form.post-form {
+        width: 100%;
+        padding: 10px;
+    }
+    .reply img,
+    .reply video {
+        max-width: 90%;
+    }
+}
+
+/* Footer Styling */
+.footer {
+    clear: both;
+    font-family: serif;
+    font-size: 12px;
+    text-align: center;
+    color: #AAA;
+    margin-top: 20px;
+}
+
+/* Improved link styles */
+a, a:visited {
+    color: #BBB;
+    text-decoration: none;
+}
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/* Thread and Reply Differentiation */
+.postblock {
+    color: #FFD700;
+    font-size: 12px;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Rules Section */
+.rules {
+    font-size: 12px;
+    text-align: justify;
+    width: 100%;
+    margin-top: 20px;
+    color: #AAA;
+}
+.rules ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* No Thumbnail Styling */
+.nothumb {
+    background: #444;
+    border: 1px solid #555;
+    float: left;
+    margin: 2px 20px;
+    padding: 1em 0.5em;
+    text-align: center;
+    color: #AAA;
+}
+
+/* Form Label Styling */
+label {
+    color: #BBB;
+}
+
+/* Table and Postarea Adjustments */
+#postarea table {
+    margin: 0 auto;
+    text-align: left;
+}
+#postarea, .login {
+    text-align: center;
+}
+.managebutton {
+    font-size: 15px;
+    height: 28px;
+    margin: .2em;
+    background: #444;
+    color: #FFF;
+    border: 1px solid #666;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.managebutton:hover {
+    background: #666;
+}

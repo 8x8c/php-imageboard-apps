@@ -1,0 +1,364 @@
+/* Updated claire.css to resemble adelia.css */
+
+/* General Styles */
+html, body {
+    font-size: 12pt; /* From adelia.css */
+    background: #EEF2FF; /* Light background */
+    color: #000000; /* Dark text for better readability */
+    margin: 0;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif; /* Consistent font family */
+}
+
+a {
+    background: inherit;
+    color: #34345C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:visited {
+    background: inherit;
+    color: #34345C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    color: #DD0000;
+    background: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+    color: #34345C;
+    background-image: linear-gradient(to right, rgba(238,242,255,1), rgba(52,52,92,0.75), rgba(238,242,255,1));
+    border: none;
+    height: 1px;
+}
+
+/* Logo Styling */
+.logo {
+    clear: both;
+    text-align: center;
+    font-size: 24pt; /* Increased font size for prominence */
+    color: #AF0A0F;
+    width: 100%;
+    margin: 10px auto; /* Added margin for spacing */
+}
+
+/* Post Area Container */
+.postarea-container {
+    background: #D6DAF0;
+    padding: 15px;
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* Rules Section */
+.rules {
+    width: 468px;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 10px auto;
+}
+
+.rules li {
+    margin-left: 1em;
+}
+
+/* Post Block */
+.postblock {
+    background: #9988EE;
+    color: #000000;
+    font-weight: 800;
+    padding: 5px;
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+/* Footer Styling */
+.footer {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Validation Message */
+.passvalid {
+    background: #9988EE;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+}
+
+/* Delete List and Buttons */
+.dellist, .delbuttons {
+    background: inherit;
+    text-align: center;
+    padding-bottom: 4px;
+}
+
+/* Post Lists */
+.postlists {
+    background: #FFFFFF;
+    width: 100%;
+    padding: 0;
+    color: #000000;
+}
+
+.row1, .row2 {
+    font-size: 12px;
+    color: #000000;
+    padding: 10px;
+}
+
+.row1 {
+    background: #9AD2F6;
+}
+
+.row2 {
+    background: #FFFFFF;
+}
+
+/* Unkfunc Styling */
+.unkfunc {
+    color: #789922;
+}
+
+/* File Size Link */
+.filesize a {
+    text-decoration: underline;
+}
+
+/* File Size */
+.filesize {
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+/* File Title */
+.filetitle {
+    font-size: 18px;
+    font-family: serif;
+    color: #0F0C5D;
+    font-weight: 800;
+}
+
+/* Poster Name */
+.postername {
+    font-size: 12px;
+    font-family: serif;
+    color: #117743;
+    font-weight: 800;
+}
+
+/* Reply Styling */
+.reply {
+    background: #D6DAF0;
+    color: #000000;
+    font-family: serif;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #34345C;
+}
+
+.pagination .current {
+    background: #34345C;
+    color: #fff;
+    border-color: #34345C;
+}
+
+.pagination .disabled {
+    color: #999;
+    border-color: #ccc;
+}
+
+/* Reply Mode Label and Link */
+.replymode {
+    background-color: #0010E0; /* Blue background */
+    color: #FFFFFF; /* White text */
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.replymode a {
+    color: #FFFFFF; /* White link text */
+    text-decoration: underline;
+}
+
+.replymode a:hover {
+    color: #DD0000; /* Red on hover */
+}
+
+/* Reply Form Styling */
+form.postform {
+    margin: 0 auto;
+    width: 500px;
+    text-align: left;
+}
+
+form.postform label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form.postform input[type="text"],
+form.postform textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form.postform input[type="submit"] {
+    padding: 10px 20px;
+    background: #34345C;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+form.postform input[type="submit"]:hover {
+    background: #DD0000;
+}
+
+/* Thread Styling */
+.thread {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.thread .title {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #FF0000; /* Bright red color for the title */
+    margin-bottom: 10px; /* Space between title and image/message */
+}
+
+.thread .reply-link {
+    font-size: 14pt;
+    float: right;
+    color: #34345C;
+}
+
+.thread img {
+    display: block;
+    margin: 10px 0;
+    max-width: 150px;
+    height: auto;
+}
+
+.thread .message {
+    clear: both;
+    margin-top: 10px;
+}
+
+/* Create Thread Button */
+#create-thread-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #34345C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#create-thread-button:hover {
+    background: #DD0000;
+}
+
+/* Close Button */
+#post-form-container button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #DD0000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#post-form-container button:hover {
+    background: #AA0000;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+    .reply, form.postform {
+        width: 100%;
+        padding: 10px;
+    }
+    .reply img,
+    .reply video {
+        max-width: 90%;
+    }
+}
+
+/* Additional Styles from Adelia.css */
+
+/* Enhanced Link Styles */
+a, a:visited {
+    color: #BBB;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/* Form Label Styling */
+label {
+    color: #BBB;
+}
+
+/* Table and Postarea Adjustments */
+#postarea table {
+    margin: 0 auto;
+    text-align: left;
+}
+#postarea, .login {
+    text-align: center;
+}
+
+.managebutton {
+    font-size: 15px;
+    height: 28px;
+    margin: .2em;
+    background: #444;
+    color: #FFF;
+    border: 1px solid #666;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.managebutton:hover {
+    background: #666;
+}
