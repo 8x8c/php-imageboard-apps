@@ -1,0 +1,262 @@
+/* General layout and text styles */
+body {
+    color: #EEE;
+    font-weight: 100;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    background: #222;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+html {
+    background: #111;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Box styling for posts */
+.post {
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    position: relative;
+    color: #EEE;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Style for reply link in post */
+.replylink {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFA500;
+    font-weight: bold;
+}
+
+.replylink a {
+    color: #FFA500;
+    text-decoration: none;
+}
+
+.replylink a:hover {
+    color: #FFF;
+}
+
+/* Style for highlighted replies */
+.replyhl {
+    background: #444;
+    border: 1px solid #777;
+    color: #FFF;
+}
+
+/* Style for reply mode banner */
+.replymode {
+    background: #E04000;
+    color: #FFF;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.replymode h2 {
+    margin: 0;
+}
+
+.replymode a {
+    display: inline-block;
+    margin-top: 5px;
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.replymode a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the post form */
+form.form {
+    background: #2A2A2A;
+    padding: 15px;
+    border: 1px solid #444;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+}
+
+form textarea {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    background: #333;
+    color: #FFF;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-submit-container {
+    position: relative;
+    margin-top: 15px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background: #66BB6A;
+}
+
+/* Improved file input styling */
+input[type="file"] {
+    margin-bottom: 15px;
+    color: #BBB;
+}
+
+/* Style for images and videos inside posts */
+.media {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Specific styling for image thumbnails */
+.thumbnail-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #555;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.thumbnail-image:hover {
+    transform: scale(1.05);
+}
+
+/* Specific styling for video inside posts */
+.media video {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #555;
+    border-radius: 4px;
+}
+
+/* Lightbox Container */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    border: 5px solid #FFF;
+    border-radius: 4px;
+}
+
+/* Pagination Styling */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination-link {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background: #444;
+    color: #FFF;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.pagination-link:hover {
+    background: #666;
+}
+
+.current-page {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background: #666;
+    color: #FFF;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* CAPTCHA styling */
+.captcha {
+    max-width: 200px;
+    margin: 0 auto;
+    background: #333;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    margin-bottom: 20px;
+    color: #FFF;
+    text-align: center;
+}
+
+.captcha label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.captcha-input {
+    background: #444;
+    color: #FFF;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 4px;
+    width: 80px; /* Make it wide enough for 5 characters */
+    text-align: center; /* Centers text for a cleaner look */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+    .post, form.form {
+        width: 100%;
+        padding: 15px;
+    }
+    .media img,
+    .media video {
+        max-width: 90%;
+        height: auto;
+    }
+}
