@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TinyIB Example</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Link to the external style.css -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <div class="adminbar">
+    [<a href="#" style="text-decoration: underline;">Manage</a>]
+    <select id="switchStylesheet">
+      <option value="">Style</option>
+      <option value="futaba" selected>Futaba</option>
+      <option value="burichan">Burichan</option>
+    </select>
+  </div>
+
+  <div class="logo">TinyIB Example</div>
+  <hr width="90%">
+
+  <div class="postarea">
+    <form name="postform" id="postform" action="post.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="parent" value="0">
+      <table>
+        <tr>
+          <td class="postblock">Name</td>
+          <td><input type="text" name="name" size="28" maxlength="75"></td>
+        </tr>
+        <tr>
+          <td class="postblock">Subject</td>
+          <td>
+            <input type="text" name="subject" size="40" maxlength="75">
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+        <tr>
+          <td class="postblock">Message</td>
+          <td>
+            <textarea id="message" name="message" cols="48" rows="4" maxlength="8000"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="postblock">File</td>
+          <td><input type="file" name="file" size="35"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="rules">
+            <ul>
+              <li>Supported file types are JPG, PNG, GIF, WEBP, and MP4.</li>
+              <li>Images larger than 250x250 will be thumbnailed.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <hr>
+
+  <!-- 
+    This placeholder page is just for the FIRST post.
+    After submission, post.php will overwrite index.html 
+    to show all posts from the database. 
+  -->
+
+  <div class="footer">
+    - <a href="https://4chess.com" target="_blank">com</a> + 
+      <a href="https://4chess.net" target="_blank">net</a> + 
+      <a href="https://4chess.com" target="_blank">org</a> -
+  </div>
+</body>
+</html>
