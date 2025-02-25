@@ -1,0 +1,123 @@
+body {
+    color: #CCC;
+    font-weight: 100;
+    margin: auto;
+    width: 800px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #222;
+}
+
+a {
+    color: #CCC;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FFF;
+}
+
+hr {
+    border: 1px dashed #666;
+}
+
+.logo {
+    color: #666;
+    font-size: 2em;
+    text-align: center;
+    margin: 10px auto;
+}
+
+/* Core styling for posts */
+.reply {
+    background: rgba(20,20,20,0.5);
+    border: 1px dashed #666;
+    border-radius: 2px;
+    max-width: 700px;
+    padding: 4px;
+    word-wrap: break-word;
+    margin-bottom: 8px;
+}
+
+.thumb {
+    border: none;
+    float: left;
+    margin: 2px 20px;
+}
+
+.nothumb {
+    background: #eee;
+    border: 2px dashed #aaa;
+    float: left;
+    margin: 2px 20px;
+    padding: 1em 0.5em;
+    text-align: center;
+}
+
+.filetitle {
+    color: #CC1105;
+    font-size: 1.2em;
+}
+
+.postername {
+    color: #117743;
+}
+
+.postertrip {
+    color: #228854;
+}
+
+.omittedposts {
+    color: #707070;
+    font-style: italic;
+}
+
+.replylink {
+    float: right;
+}
+
+blockquote {
+    margin: 0;
+}
+
+.pagelinks {
+    text-align: center;
+    margin: 1em 0;
+}
+
+/* Form styling */
+#postform {
+    margin: 1em auto;
+    text-align: center;
+}
+
+#postform input[type="text"],
+#postform textarea,
+#postform input[type="file"] {
+    background: rgba(20,20,20,0.5);
+    border: 1px solid #999;
+    color: #fff;
+}
+
+#postform input[type="submit"] {
+    margin: 0.5em;
+}
+
+/* Footer */
+.footer {
+    font-family: serif;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 2em;
+    color: #888;
+}
+
+/* Post form “box” */
+.postbox {
+    border: 1px solid #444;
+    padding: 10px;
+    margin: 10px auto;
+    width: 90%;
+    background: #333;
+    border-radius: 4px;
+}
