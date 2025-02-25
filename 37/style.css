@@ -1,0 +1,97 @@
+/* Layout & General Styles */
+html {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEUcHBweHh5WWmVNAAAAJUlEQVR4AWMAAkYQgNOMaCJAAlUEiFFFgAhVBM1EICAoMljcAQBWEAChK8hEDAAAAABJRU5ErkJggg==);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    color: #CCC;
+    font-weight: 100;
+    margin: auto;
+    width: 800px;
+}
+
+/* Logo */
+.logo {
+    clear: both;
+    color: #666;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+}
+
+/* Post Area */
+#postarea,
+.login {
+    text-align: center;
+}
+
+#postarea table {
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Post Block */
+.postblock {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: right;
+}
+
+/* Thumbnails */
+.thumb {
+    border: none;
+    float: left;
+    margin: 2px 20px;
+}
+
+/* Reply */
+.reply {
+    background: rgba(20,20,20,0.5);
+    border: 1px dashed #666;
+    border-radius: 2px;
+    max-width: 700px;
+    padding: 4px;
+    word-wrap: break-word;
+}
+
+.reply .filesize {
+    margin-left: 20px;
+}
+
+.replylink {
+    float: right;
+}
+
+/* Blockquotes & Quotes */
+blockquote {
+    margin: 0 0 0 20px;
+}
+
+.unkfunc {
+    background: inherit;
+    color: #789922;
+}
+
+/* Miscellaneous */
+.omittedposts {
+    color: #707070;
+    font-style: italic;
+}
+
+a {
+    color: #CCC;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
