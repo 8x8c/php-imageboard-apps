@@ -1,0 +1,158 @@
+body {
+    color: #800000; /* Slightly darkened the color for better contrast */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px; /* Increased font size for readability */
+    line-height: 1.5; /* Improved line spacing for readability */
+    padding: 20px;
+    margin: 0;
+    background: #ffe url("fade.png") top center repeat-x;
+}
+
+/* Container for all content */
+.container {
+    max-width: 800px; /* Constrain the width to make it more readable on large screens */
+    margin: 0 auto;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #d9bfb7;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.infoBox {
+    background: #ffddaa;
+    border: 1px solid #800000;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px; /* Rounded edges */
+}
+
+.postName {
+    color: #117743;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.reply {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f0e0d6;
+    border: 1px solid #d9bfb7;
+    border-radius: 5px; /* Rounded corners to enhance visual appearance */
+}
+
+#postBox {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f9f1e8;
+    border: 1px solid #d9bfb7;
+    border-radius: 5px;
+}
+
+#showPosts {
+    margin-bottom: 15px;
+}
+
+#showPosts span {
+    font-weight: bold;
+}
+
+#showPosts a {
+    text-decoration: none;
+    color: #117743;
+    font-weight: bold;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+#showPosts a:hover {
+    background: #117743;
+    color: #fff;
+    border: 1px solid #117743;
+    border-radius: 3px;
+}
+
+#showPosts a.active {
+    background: #117743;
+    color: #fff;
+    border: 1px solid #117743;
+    border-radius: 3px;
+}
+
+td:first-child {
+    background-color: #ffddaa;
+    color: #800000;
+    font-weight: bold;
+    border: 1px solid #800000;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #d9bfb7;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 150px; /* Increased the height for better usability */
+    resize: vertical; /* Allow users to adjust the height */
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background: #117743;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #0e623a;
+}
+
+.error {
+    background: #ffcccc;
+    color: #800000;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #800000;
+    border-radius: 5px;
+}
+
+#powered {
+    margin: 15px 0;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #800000;
+}
+
+/* Make sure the page is responsive */
+@media (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
+
+    textarea, input[type="text"] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .reply {
+        margin: 10px 0;
+    }
+
+    #showPosts a {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+}
