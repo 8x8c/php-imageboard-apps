@@ -1,0 +1,119 @@
+/* Grey Theme */
+body {
+  padding: 8px;
+  margin: 0 auto;
+  background: #F2F2F2;
+  color: #333;
+  font-family: sans-serif;
+}
+hr {
+  clear: both;
+  border: none;
+  height: 1px;
+  background: #666;
+  background-image: linear-gradient(
+    to right,
+    #F2F2F2,
+    #999,
+    #F2F2F2
+  );
+}
+.adminbar {
+  text-align: right;
+  float: right;
+}
+.logo {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+}
+.postarea {
+  text-align: center;
+}
+.postarea table {
+  margin: 0 auto;
+  text-align: left;
+}
+.postblock {
+  background: #CCC;
+  color: #333;
+  font-weight: 800;
+  padding: 3px;
+}
+.rules {
+  padding-left: 5px;
+  width: 468px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+.rules ul {
+  margin: 0;
+  padding-left: 0;
+}
+.footer {
+  text-align: center;
+  font-size: 12px;
+  font-family: serif;
+}
+.post-header {
+  text-align: left;
+  padding: 5px;
+  font-size: 1em;
+  overflow: hidden;
+}
+.thumb-container {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin: 10px auto;
+}
+.thumb {
+  width: 250px;
+  height: 250px;
+  display: block;
+  object-fit: contain;
+  overflow: hidden;
+  margin: auto;
+  cursor: pointer;
+}
+.message {
+  margin: 1em 25px;
+  text-align: left;
+}
+.filetitle {
+  color: #555;
+  font-weight: 800;
+  font-size: 1.2em;
+}
+.postername {
+  color: #007700;
+  font-weight: bold;
+}
+.op {
+  margin-bottom: 1em;
+  padding: 5px;
+  background: #DDD;
+  border: 1px solid #AAA;
+  overflow: auto;
+}
+.userdelete {
+  float: right;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+.reflink a {
+  color: inherit;
+  text-decoration: none;
+}
+.reflink a:hover {
+  color: #333;
+  font-weight: bold;
+}
+a {
+  color: #0000EE;
+  text-decoration: none;
+}
+a:hover {
+  color: #DD0000;
+}
