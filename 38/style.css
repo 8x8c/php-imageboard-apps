@@ -1,0 +1,142 @@
+/* Layout & General Styles */
+html {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEUcHBweHh5WWmVNAAAAJUlEQVR4AWMAAkYQgNOMaCJAAlUEiFFFgAhVBM1EICAoMljcAQBWEAChK8hEDAAAAABJRU5ErkJggg==);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    color: #CCC;
+    font-weight: 100;
+    margin: auto;
+    width: 800px;
+}
+
+/* Logo */
+.logo {
+    clear: both;
+    color: #666;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+}
+
+/* Post Area (posting form) */
+#postarea {
+    margin: 20px auto;
+    max-width: 400px;           /* narrower form */
+    background: rgba(20,20,20,0.5);
+    padding: 15px;
+    border: 1px solid green;    /* green border */
+    border-radius: 4px;
+    color: green;               /* text in the post form is green */
+}
+
+/* Inline form fields for posting */
+.form-field {
+    margin: 10px 0;
+}
+
+.form-field input[type="text"],
+.form-field textarea,
+.form-field input[type="file"],
+.form-field input[type="submit"],
+.form-field input[name="captcha_out"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid green;    /* green border on inputs */
+    background: rgba(20,20,20,0.5);
+    color: green;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: green;
+    opacity: 1;
+}
+::-webkit-input-placeholder {
+    color: green;
+}
+::-moz-placeholder {
+    color: green;
+}
+:-ms-input-placeholder {
+    color: green;
+}
+
+/* Specific styling for captcha input field */
+.form-field input[name="captcha_out"] {
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    padding-right: 60px;
+}
+
+/* Post Block */
+.postblock {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: right;
+}
+
+/* Thumbnails */
+.thumb {
+    border: none;
+    float: left;
+    margin: 2px 20px;
+}
+
+/* Reply */
+.reply {
+    background: rgba(20,20,20,0.5);
+    border: 1px dashed #666;
+    border-radius: 2px;
+    max-width: 700px;
+    padding: 4px;
+    word-wrap: break-word;
+}
+
+.reply .filesize {
+    margin-left: 20px;
+}
+
+/* Reflink (View thread) */
+.reflink {
+    float: right;
+    display: inline-block;
+    margin: 0;
+}
+
+/* Blockquotes & Quotes */
+blockquote {
+    margin: 0 0 0 20px;
+}
+
+.unkfunc {
+    background: inherit;
+    color: #789922;
+}
+
+/* Miscellaneous */
+.omittedposts {
+    color: #707070;
+    font-style: italic;
+}
+
+a {
+    color: #CCC;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
