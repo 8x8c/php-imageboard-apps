@@ -1,0 +1,152 @@
+body {
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 1100px;
+    background-color: #EEE; /* Light background reminiscent of classic imageboard style */
+    color: #000; /* Dark text for contrast */
+    line-height: 1.4;
+}
+
+h1 {
+    text-align: center;
+    color: #800000; /* A subtle color for the title, similar to 4chan's title text */
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #F0E0D6; /* Classic cream color for posts */
+    border: 1px solid #D9BFB7;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+form input[type="text"], form textarea, form input[type="file"] {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    font-size: 14px;
+    color: #000;
+}
+
+form button {
+    background-color: #D9BFB7;
+    border: 1px solid #BFA597;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+form button:hover {
+    background-color: #CFA896;
+}
+
+.hr, hr {
+    border: none;
+    border-bottom: 1px solid #CCC;
+    margin: 20px 0;
+}
+
+.thread, .reply-post, .reply-snippet {
+    background-color: #F0E0D6; /* main post background */
+    border: 1px solid #D9BFB7;
+    padding: 10px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.thread {
+    /* Threads are full width and not indented */
+}
+
+.reply-post, .reply-snippet {
+    background-color: #F8F3F1; /* Slightly lighter or different shade for replies */
+    margin-left: 40px; /* Indent replies to visually distinguish them */
+    border-color: #D9BFB7;
+    padding: 10px;
+}
+
+.reply-snippet {
+    background-color: #F5ECE9; /* even slightly different shade for last reply snippet */
+    margin-top: 10px;
+    border-left: 3px solid #BFA597;
+}
+
+.post-info {
+    margin-bottom: 5px;
+    color: #444;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.post-info a {
+    color: #444;
+    text-decoration: none;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.post-info a:hover {
+    text-decoration: underline;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #DDD;
+    display: block;
+    margin-top: 10px;
+}
+
+.no-threads {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+a {
+    color: #0000EE; /* Standard link color reminiscent of older boards */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.back-link {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reply-snippet .post-info strong,
+.reply-post .post-info strong,
+.thread .post-info strong {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Adjust forms on reply page */
+form input[type="password"], form input[type="submit"] {
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    form, .thread, .reply-post, .reply-snippet {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .reply-post, .reply-snippet {
+        margin-left: 20px;
+    }
+}

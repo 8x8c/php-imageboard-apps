@@ -1,0 +1,95 @@
+body {
+    background: #FCE4EC; /* pastel pink background */
+    color: #333;
+    font-family: "Lucida Sans", sans-serif;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #00695C; /* teal/mint */
+    margin-bottom: 20px;
+}
+
+.thread, .reply-post, .reply-snippet {
+    background: #FFF;
+    border: 1px solid #E0BFD2;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+
+.reply-post, .reply-snippet {
+    margin-left: 40px;
+    background: #F8F2F5;
+}
+
+.reply-snippet {
+    border-left: 3px solid #80CBC4;
+    background: #F3EAF0;
+    margin-top: 10px;
+}
+
+.post-info {
+    font-size: 0.9em;
+    color: #6A4C58;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form {
+    background: #FFF;
+    border: 1px solid #E0BFD2;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 3px;
+}
+
+input[type="text"], textarea, input[type="file"] {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #D7A3BF;
+    background: #FFF;
+    color: #333;
+    border-radius: 3px;
+}
+
+button {
+    background: #80CBC4;
+    border: none;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4DB6AC;
+}
+
+a {
+    color: #00695C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img, video {
+    max-width: 100%;
+    border: 1px solid #DDD;
+    display: block;
+    margin-top: 10px;
+}
+
+.pagination, .no-threads, .back-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}

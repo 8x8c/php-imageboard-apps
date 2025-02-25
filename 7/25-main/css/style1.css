@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 10px;
+    background-color: #333;
+    color: #f1f1f1;
+    /* Use most of the horizontal space, good for mobile and PC */
+    max-width: 95%;
+    width: 95%;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.thread, .reply-post, .reply-snippet {
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    /* Ensure long words wrap instead of overflowing */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.thread {
+    background-color: #444;
+}
+
+.reply-post {
+    /* Different color for replies to stand out */
+    background-color: #3c3c3c;
+}
+
+.reply-snippet {
+    background-color: #555;
+    border: 1px solid #555;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+}
+
+form {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #444;
+    border: 1px solid #444;
+    border-radius: 5px;
+    max-width: 600px; /* Wider form area */
+    margin: 20px auto;
+}
+
+textarea, input[type="file"], input[type="text"] {
+    display: block;
+    width: 90%;
+    max-width: 500px; /* Increased width for better readability */
+    margin: 0 auto 10px auto;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #555;
+    color: #f1f1f1;
+    border: 1px solid #666;
+    border-radius: 3px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.post-info {
+    margin-bottom: 5px;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+.no-threads {
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+}
+
+hr {
+    border: 1px solid #444;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* For reply mode page */
+.back-link {
+    text-align: center;
+    margin-bottom: 10px;
+}

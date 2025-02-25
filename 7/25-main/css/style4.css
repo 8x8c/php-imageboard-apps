@@ -1,0 +1,97 @@
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    background: #F3F0E6; /* light beige */
+    color: #333;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #4A7023;
+    margin-bottom: 20px;
+}
+
+.thread, .reply-post, .reply-snippet {
+    background: #FAF9F5;
+    border: 1px solid #D5C9A3;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+
+.thread {}
+
+.reply-post, .reply-snippet {
+    margin-left: 40px;
+    background: #FDFCF7;
+}
+
+.reply-snippet {
+    border-left: 3px solid #8F9B76;
+    background: #F7F5EE;
+    margin-top: 10px;
+}
+
+.post-info {
+    font-size: 0.9em;
+    color: #59544B;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form {
+    background: #FDFCF7;
+    border: 1px solid #D5C9A3;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 3px;
+}
+
+input[type="text"], textarea, input[type="file"] {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #C8BFA3;
+    background: #FFF;
+    border-radius: 3px;
+    color: #333;
+}
+
+button {
+    background: #8F9B76;
+    border: none;
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #70795B;
+}
+
+a {
+    color: #4A7023;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img, video {
+    max-width: 100%;
+    border: 1px solid #CCC;
+    display: block;
+    margin-top: 10px;
+}
+
+.pagination, .no-threads, .back-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
