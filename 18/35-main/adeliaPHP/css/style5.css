@@ -1,0 +1,96 @@
+body {
+    background: #1E1E1E;
+    color: #E0E0E0;
+    font-family: Verdana, Geneva, sans-serif;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #36D1DC; /* neon bluish */
+    margin-bottom: 20px;
+}
+
+.thread, .reply-post, .reply-snippet {
+    background: #2A2A2A;
+    border: 1px solid #444;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+
+.reply-post, .reply-snippet {
+    margin-left: 40px;
+    background: #2E2E2E;
+}
+
+.reply-snippet {
+    border-left: 3px solid #36D1DC;
+    background: #333;
+    margin-top: 10px;
+}
+
+.post-info {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form {
+    background: #2A2A2A;
+    border: 1px solid #444;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 3px;
+}
+
+input[type="text"], textarea, input[type="file"] {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #555;
+    background: #1E1E1E;
+    color: #E0E0E0;
+    border-radius: 3px;
+}
+
+button {
+    background: #36D1DC;
+    border: none;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #25A8B0;
+}
+
+a {
+    color: #36D1DC;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img, video {
+    max-width: 100%;
+    border: 1px solid #666;
+    display: block;
+    margin-top: 10px;
+}
+
+.pagination, .no-threads, .back-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+}

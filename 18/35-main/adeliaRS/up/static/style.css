@@ -1,0 +1,268 @@
+/* static/style.css */
+
+/* Reset some basic elements for consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Navigation Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal Rules */
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+}
+
+.hr-green {
+    height: 2px;
+    background: #2ecc71;
+}
+
+/* Headings */
+h1, h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+/* Forms */
+form.postform {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form.postform input[type="text"],
+form.postform input[type="password"],
+form.postform input[type="file"],
+form.postform textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form.postform input[type="submit"],
+form.postform input[type="button"] {
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form.postform input[type="submit"]:hover,
+form.postform input[type="button"]:hover {
+    background-color: #2980b9;
+}
+
+/* Post Lists */
+.postlists {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual Post Styling */
+.post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.thread-post {
+    /* Additional styles for thread posts if needed */
+}
+
+.reply-post {
+    /* Indentation or other styles for reply posts */
+    margin-left: 20px;
+}
+
+/* Post Header */
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.post-header .title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.reply-link {
+    font-size: 0.9em;
+    color: #e67e22;
+}
+
+.reply-link:hover {
+    color: #d35400;
+}
+
+/* Post Message */
+.post .message {
+    margin-bottom: 10px;
+}
+
+/* Post Media */
+.post-media {
+    margin-bottom: 10px;
+}
+
+.post-media img.toggle-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.post-media img.toggle-image:hover {
+    transform: scale(1.05);
+}
+
+.post-media video.video-player {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Post Footer */
+.post-footer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+/* Admin Controls */
+.admin-controls {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.admin-controls:hover {
+    text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+.pagination a:hover {
+    background-color: #ecf0f1;
+}
+
+.pagination .current {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #2980b9;
+}
+
+/* Navigation */
+.navigation-board,
+.navigation-reply {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Logo and Other Elements */
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Error Pages */
+body > h1 {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 50px;
+}
+
+body > p {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reply-link {
+        margin-top: 5px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination a,
+    .pagination span {
+        margin: 5px;
+    }
+}

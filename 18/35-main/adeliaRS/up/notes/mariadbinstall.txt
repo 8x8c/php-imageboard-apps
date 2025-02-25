@@ -1,0 +1,10 @@
+
+sudo apt update
+
+
+sudo apt install -y mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+
+
+mariadb root fde4m43g8gsu7dxsfvey4fvf0gsfgchn39gsjh6bdt
