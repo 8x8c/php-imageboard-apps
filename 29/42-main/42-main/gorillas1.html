@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gorillas Game Clone</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #87CEEB; /* Sky blue background */
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 2px solid #000;
+            background: #87CEEB; /* Match the sky color */
+        }
+        #controls {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #controls label, #controls input, #controls button {
+            color: #FFFFFF;
+        }
+        #controls input {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #FFF;
+            border-radius: 4px;
+            background-color: #1E90FF;
+            color: #FFF;
+        }
+        #controls button {
+            padding: 5px 10px;
+            background-color: #1E90FF;
+            border: 2px solid #FFF;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #controls button:hover {
+            background-color: #63B8FF;
+        }
+        #turnIndicator, #score {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="turnIndicator">Player 1's Turn</div>
+    <canvas id="gameCanvas" width="1200" height="600"></canvas>
+    <div id="controls">
+        <label for="angleInput">Angle (0-90):</label>
+        <input type="number" id="angleInput" min="0" max="90">
+        <label for="velocityInput">Velocity (1-100):</label>
+        <input type="number" id="velocityInput" min="1" max="100">
+        <button onclick="handleFireButton()">Fire!</button>
+        <div id="score">Score: Player 1 - 0 | Player 2 - 0</div>
+    </div>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        const turnIndicator = document.getElementById("turnIndicator");
+        const scoreDisplay = document.getElementById("score");
+
+        let gorilla1 = { x: 100, y: 400, width: 30, height: 30 }; 
+        let gorilla2 = { x: 650, y: 400, width: 30, height: 30 };
+        let currentPlayer = 1;
+        let player1Score = 0;
+        let player2Score = 0;
+        let banana = null;
+        let angle = 0;
+        let velocity = 0;
+        let buildings = [];
+        let gameInProgress = false; // To prevent multiple banana launches
+        let scoreIncremented = false; // Prevent multiple increments per hit
+
+        function initBuildings() {
+            buildings = [];
+            const buildingColors = ["#707070", "#808080", "#909090", "#606060", "#505050", "#A0A0A0"];
+            const numBuildings = 12; 
+            let totalWidth = 0;
+            let widths = [];
+
+            // Generate random widths
+            for (let i = 0; i < numBuildings; i++) {
+                let width = Math.floor(Math.random() * 50) + 50; 
+                widths.push(width);
+                totalWidth += width;
+            }
+            // Scale to fill canvas
+            let scale = canvas.width / totalWidth;
+            for (let i = 0; i < widths.length; i++) {
+                widths[i] *= scale;
+            }
+
+            let xPos = 0;
+            for (let i = 0; i < numBuildings; i++) {
+                let width = widths[i];
+                let height = Math.floor(Math.random() * (canvas.height / 2)) + (canvas.height / 4);
+                buildings.push({
+                    x: xPos,
+                    y: canvas.height - height,
+                    width: width,
+                    height: height,
+                    color: buildingColors[i % buildingColors.length],
+                    explosions: []
+                });
+                xPos += width;
+            }
+
+            // Place gorillas on top of left and right ends of the skyline
+            gorilla1 = placeGorilla(buildings, true);
+            gorilla2 = placeGorilla(buildings, false);
+        }
+
+        function placeGorilla(buildings, leftSide) {
+            // If leftSide is true, pick a building from the left third
+            // If false, pick from the right third
+            let index;
+            if (leftSide) {
+                index = Math.floor(Math.random() * Math.floor(buildings.length / 3)) + 1;
+            } else {
+                index = buildings.length - (Math.floor(Math.random() * Math.floor(buildings.length / 3)) + 2);
+            }
+            let building = buildings[index];
+            return {
+                x: building.x + (building.width / 2) - 15,
+                y: building.y - 30,
+                width: 30,
+                height: 30
+            };
+        }
+
+        function drawBuildings() {
+            buildings.forEach(building => {
+                ctx.save();
+                ctx.fillStyle = building.color;
+                ctx.fillRect(building.x, building.y, building.width, building.height);
+
+                // Erase explosion holes
+                ctx.globalCompositeOperation = 'destination-out';
+                building.explosions.forEach(explosion => {
+                    ctx.beginPath();
+                    ctx.arc(explosion.x, explosion.y, explosion.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                ctx.restore();
+            });
+        }
+
+        function drawGorillas() {
+            // Draw simple square gorillas (similar to the original blocky style)
+            ctx.fillStyle = "#FF00FF"; // Magenta like the original gorillas
+            // Gorilla 1
+            ctx.fillRect(gorilla1.x, gorilla1.y, gorilla1.width, gorilla1.height);
+            // Gorilla 2
+            ctx.fillRect(gorilla2.x, gorilla2.y, gorilla2.width, gorilla2.height);
+        }
+
+        function drawSun() {
+            // Simple sun with face in the middle
+            ctx.fillStyle = "#FFD700"; 
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, 60, 40, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw eyes
+            ctx.fillStyle = "#000000"; 
+            ctx.beginPath();
+            ctx.arc((canvas.width / 2) - 15, 50, 5, 0, Math.PI * 2); 
+            ctx.arc((canvas.width / 2) + 15, 50, 5, 0, Math.PI * 2); 
+            ctx.fill();
+
+            // Draw smile
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, 75, 15, 0, Math.PI, false);
+            ctx.stroke();
+        }
+
+        function drawBanana() {
+            if (banana) {
+                ctx.fillStyle = "#FFFF00"; 
+                ctx.beginPath();
+                ctx.arc(banana.x, banana.y, 5, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+        function launchBanana(angle, velocity) {
+            const radian = (Math.PI / 180) * angle;
+            banana = {
+                x: currentPlayer === 1 ? gorilla1.x + gorilla1.width / 2 : gorilla2.x + gorilla2.width / 2,
+                y: currentPlayer === 1 ? gorilla1.y : gorilla2.y,
+                vx: (currentPlayer === 1 ? 1 : -1) * velocity * Math.cos(radian),
+                vy: -velocity * Math.sin(radian),
+            };
+            gameInProgress = true;
+            scoreIncremented = false;
+        }
+
+        function updateBanana() {
+            if (banana) {
+                banana.x += banana.vx * 0.1;
+                banana.y += banana.vy * 0.1;
+                banana.vy += 0.5; // gravity
+
+                // Check collision with buildings
+                for (let building of buildings) {
+                    if (banana.x >= building.x && banana.x <= building.x + building.width &&
+                        banana.y >= building.y && banana.y <= building.y + building.height) {
+                        // Check if inside an explosion hole
+                        let insideHole = false;
+                        for (let explosion of building.explosions) {
+                            let dx = banana.x - explosion.x;
+                            let dy = banana.y - explosion.y;
+                            if (Math.sqrt(dx * dx + dy * dy) < explosion.radius) {
+                                insideHole = true;
+                                break;
+                            }
+                        }
+                        if (!insideHole) {
+                            // Create explosion in building
+                            building.explosions.push({ x: banana.x, y: banana.y, radius: 30 });
+                            banana = null;
+                            gameInProgress = false; 
+                            switchPlayer();
+                            return;
+                        }
+                    }
+                }
+
+                // Check collision with gorillas
+                let targetGorilla = currentPlayer === 1 ? gorilla2 : gorilla1;
+                if (banana.x >= targetGorilla.x && banana.x <= targetGorilla.x + targetGorilla.width &&
+                    banana.y >= targetGorilla.y && banana.y <= targetGorilla.y + targetGorilla.height) {
+                    if (!scoreIncremented) {
+                        if (currentPlayer === 1) {
+                            player1Score++;
+                        } else {
+                            player2Score++;
+                        }
+                        updateScoreDisplay();
+                        scoreIncremented = true; 
+                    }
+                    banana = null;
+                    gameInProgress = false; 
+                    setTimeout(() => { resetGame(); }, 1000);
+                    return;
+                }
+
+                // Out of bounds
+                if (banana.y > canvas.height || banana.x < 0 || banana.x > canvas.width) {
+                    banana = null;
+                    gameInProgress = false; 
+                    switchPlayer();
+                }
+            }
+        }
+
+        function switchPlayer() {
+            currentPlayer = currentPlayer === 1 ? 2 : 1;
+            turnIndicator.textContent = `Player ${currentPlayer}'s Turn`;
+            updateScoreDisplay();
+            if (currentPlayer === 2 && !gameInProgress) {
+                setTimeout(computerTurn, 1000);
+            }
+        }
+
+        function resetGame() {
+            currentPlayer = 1;
+            banana = null;
+            gameInProgress = false;
+            scoreIncremented = false;
+            initBuildings();
+            drawGame();
+            turnIndicator.textContent = `Player ${currentPlayer}'s Turn`;
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            scoreDisplay.textContent = `Score: Player 1 - ${player1Score} | Player 2 - ${player2Score}`;
+        }
+
+        function drawGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawSun();
+            drawBuildings();
+            drawGorillas();
+            drawBanana();
+        }
+
+        function gameLoop() {
+            drawGame();
+            updateBanana();
+            requestAnimationFrame(gameLoop);
+        }
+
+        function handleFireButton() {
+            if (gameInProgress) {
+                alert("A banana is already in flight!");
+                return;
+            }
+            angle = parseFloat(document.getElementById("angleInput").value);
+            velocity = parseFloat(document.getElementById("velocityInput").value);
+            if (isNaN(angle) || isNaN(velocity) || angle < 0 || angle > 90 || velocity < 1 || velocity > 100) {
+                alert("Please enter valid angle (0-90) and velocity (1-100)");
+                return;
+            }
+            launchBanana(angle, velocity);
+        }
+
+        function computerTurn() {
+            let targetGorilla = gorilla1;
+            let shooterGorilla = gorilla2;
+            let dx = (targetGorilla.x + targetGorilla.width / 2) - (shooterGorilla.x + shooterGorilla.width / 2);
+            let dy = (targetGorilla.y + targetGorilla.height / 2) - (shooterGorilla.y + shooterGorilla.height / 2);
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            // A basic guess for angle and velocity
+            let computerAngle = Math.min(Math.max(Math.atan2(-dy, Math.abs(dx)) * (180 / Math.PI), 10), 80);
+            let computerVelocity = Math.min(Math.max(distance / 15, 20), 100);
+
+            launchBanana(computerAngle, computerVelocity);
+        }
+
+        initBuildings();
+        updateScoreDisplay();
+        gameLoop();
+    </script>
+</body>
+</html>
