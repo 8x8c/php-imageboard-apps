@@ -1,0 +1,6 @@
+# x1
+
+This is one of the first php aps i ever made long ago. The goal was to use the very least amount of code (look at how small a.php is!!!) For efficiency, it does not even have a db! You land on index.html. The post form calls a.php which actually appends your message back to index.html. The method here is that i realized one does not need the closing html tags. At the time i thought this was bad ass code...it locks index.html so no one else can write to it, appends the post (most efficient way) and then unlocks it. And it just serves the html page.  Ultra efficient. 
+
+Now, that is simple and could be improved easily. If you want posts to show up on top of other posts and keep your closing html and body tags in the index.html, have a marker like <start heereee> or something and have the code find the marker and then insert new posts under it. Or have the code count a number of spaces from the top and insert the new posts at that point. Pagnation could easily be added or any db. Absurdly easy to change this to literally anything you want. Feed it to chat gpt and it can instantly do anything you want. The code for this is interesting and rather unique, and ultra flexible. This is a textboard as is, but you can have ai make it accept files too. 
+
