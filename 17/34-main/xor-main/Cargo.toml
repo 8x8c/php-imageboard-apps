@@ -1,0 +1,10 @@
+[package]
+name = "secure_xor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8.5"
+sha2 = "0.10.8"
+hmac = "0.12.1"
+hex = "0.4.3"
